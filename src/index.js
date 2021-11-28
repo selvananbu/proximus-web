@@ -8,8 +8,11 @@ import Home from './screens/home';
 import Device from './screens/device';
 import store from './store';
 import { Provider } from 'react-redux';
+import DeviceView from './screens/deviceView';
+
 
 const rootElement = document.getElementById("root");
+
 ReactDOM.render(
   <Provider store={store}>
   <BrowserRouter>
@@ -17,6 +20,7 @@ ReactDOM.render(
       <Route path="/" element={<App />} />
       <Route path="/home" element={<Home />} />
       <Route path="/addDevice" element={<Device />} />
+      <Route path="/viewDevice" element={<DeviceView />} />
     </Routes>
   </BrowserRouter>
   </Provider>,
