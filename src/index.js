@@ -3,12 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './screens/home';
+import Device from './screens/device';
+import store from './store';
+import { Provider } from 'react-redux';
 
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/addDevice" element={<Device />} />
+    </Routes>
+  </BrowserRouter>
+  </Provider>,
+  rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function
