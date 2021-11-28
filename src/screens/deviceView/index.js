@@ -27,12 +27,13 @@ const DeviceView = ({ }) => {
             setDeviceName(state?.deviceName)
             setPlatform(state?.platform)
             setIsActive(state?.active)
+            setDate(state?.purchaseDate)
 
             let barCodeData = {
                 deviceName: state?.deviceName,
                 deviceOwner: state?.owner,
                 platform: state?.platform,
-                platform: state?.active
+                isActive: state?.active
             }
             setBarcode(barCodeData)
         }
@@ -51,7 +52,7 @@ const DeviceView = ({ }) => {
             <div className="qrcodeConatiner">
                 <QRCode value={barcode} />
             </div>
-            <div className="textfiledContainer">
+            <div className="textfiledContainerView">
                 <div className="viewText">
                     Device Name: {deviceName}
                 </div>
